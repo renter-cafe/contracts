@@ -1146,7 +1146,7 @@ describe('Cafe', async () => {
 			])
 		})
 
-		it.only('should harvestAll', async () => {
+		it('should harvestAll', async () => {
 			// Disable automine
 			await evm.setAutomine(false)
 
