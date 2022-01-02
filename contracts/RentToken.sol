@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract RentToken is
-	ERC20("RentToken", "RENT"),
+	ERC20("Renter.Cafe", "RENT"),
 	ERC20Capped(10_000_000 * 1e18),
 	Ownable,
 	ERC20Burnable

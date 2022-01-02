@@ -13,6 +13,12 @@ describe('RENT', async () => {
 		token = await Token.deploy()
 	})
 
+	it('has right properties', async () => {
+		expect(await token.name()).to.equal('Renter.Cafe')
+		expect(await token.symbol()).to.equal('RENT')
+		expect(await token.cap()).to.equal(10n ** 25n)
+	})
+
 	it('can mint tokens', async () => {
 		const amount = 1000n
 
