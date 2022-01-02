@@ -22,4 +22,13 @@ describe('RENT', async () => {
 
 		expect(await token.balanceOf(alice.address)).to.equal(amount)
 	})
+
+	it('cannot mint more than 10m tokens', async () => {
+		await expect(token.mint(alice.address, 9_999_999n * 10n ** 18n)).to.not.be
+			.reverted
+		await expect(token.mint(alice.address, 10n ** 18n)).to.not.be.reverted
+		await expect(token.mint(alice.address, 1)).to.be.revertedWith(
+			'ERC20Capped: cap exceeded'
+		)
+	})
 })
